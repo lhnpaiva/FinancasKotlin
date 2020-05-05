@@ -11,13 +11,14 @@ import kotlinx.android.synthetic.main.activity_lista_transacoes.view.*
 import java.math.BigDecimal
 
 class ResumoView(
-    private val context: Context,
+    context: Context,
     private val view: View,
     transacoes: List<Transacao>
 ) {
     private val resumo: Resumo = Resumo(transacoes)
     private val corReceita = ContextCompat.getColor(context, R.color.receita)
     private val corDespesa = ContextCompat.getColor(context, R.color.despesa)
+
     fun atualiza() {
         adicionaReceita()
         adicionaDespesa()
@@ -34,7 +35,7 @@ class ResumoView(
     }
 
 
-   private fun adicionaDespesa() {
+    private fun adicionaDespesa() {
         val totalDespesa = resumo.despesa
         with(view.resumo_card_despesa) {
             setTextColor(corDespesa)
